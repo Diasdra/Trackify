@@ -1,0 +1,49 @@
+<div class="container">
+    <form action="/friends" method="POST">
+      <div class="form-group">
+        <label for="Search">Search</label>
+        <% if (typeof searchTerm !== 'undefined') { %>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by Username" name="search" value="<%= searchTerm %>">
+            
+        <% } else {%>
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by Username" name="search">
+            <% } %>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+<% if (typeof searchResults !== 'undefined') { %>
+<style>
+    /* I added this in as I was too lazy to create a CSS file for this page. */
+    .btn.btn-dark:hover {
+        cursor: auto;
+        background-color: #343a40;
+        border-color: #343a40;
+    }
+    li {
+        padding-bottom: 4.5em; 
+        margin: auto; 
+        text-align: center;
+    }
+</style>
+<div class="container">
+    <form action="/friends/update" method="POST">
+        <input type="hidden" value="<%= searchTerm %>" name="search">
+        <ul style="list-style-type: none; padding: 0">
+        <% searchResults.forEach(friend => { %>
+        <li>
+        <p style="display: inline-block;"><%= friend.name %></p>
+        <% if (friend.id === user.id) { %>
+            <p class="btn btn-dark">This is you!</p>
+        <% } else if (friend.followedBy.find(i => i.id === user.id)) { %>
+            <button class="btn btn-success" name="unFollowID" value="<%= friend.id %>">Click to unfollow</button>
+        <% } else { %>
+            <button class="btn btn-danger" name="followID" value="<%= friend.id %>">Click to follow</button>
+        <% } %>
+            <img src="<%= friend.profileURL %>" class="img-thumbnail" style="float: left; width: 4rem;">
+        </li>        
+        <% }); %>
+        <% } %>
+    </ul>
+    </form>
+</div>

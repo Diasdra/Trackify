@@ -1,0 +1,29 @@
+<div class="container">
+    <form action="/reminder/search" method="POST">
+      <div class="form-group">
+        <label for="Search">Search</label>
+        <input type="text" class="form-control" id="searchInput" placeholder="Search" name="search">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+  <ul class="list-group">
+    <% if (reminders !== null) { %>
+      <% reminders.forEach(function (reminderItem) { %>
+        <%if (reminderItem.user.id === userid){%>
+          <li class="list-group-item">
+            <strong><%= reminderItem.title %>: </strong>
+            <%= reminderItem.body %>
+            || Completed:
+            <% if (reminderItem.completed == true) { %>
+              <span class="badge badge-success">True</span>
+            <% } else if (reminderItem.completed == false) { %>
+              <span class="badge badge-danger">False</span>
+            <% } %>
+            <a class="pull-right" href=<%= "/reminder/" + reminderItem.id %>>View</a>
+          </li>
+        <% } %>
+      <% }) %>
+    <% } %>
+  </ul>
+  
+</div>
