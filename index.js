@@ -20,24 +20,26 @@ app.use(session({
   }
 }));
 
+//Debugging console logs
+app.use((req, res, next) => {
+  console.log("Inventory Database is");
+  console.log(req.body.inventory);
+  console.log("Entire session object:");
+  console.log(req.session);
+  next();
+});
+
+
 app.set("views", path.join(__dirname, "/views"))
 app.set("view engine", "ejs");
 
 // Routes start here
-app.get('/' ,(req, res) => {inventoryController.list})
+app.get('/' , inventoryController.list)
 app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
 app.get('/create', (req, res) => { res.render("create") })
 app.post('/create', (req, res) => { inventoryController.create })
 
-//Debugging console logs
-app.use((req, res, next) => {
-  console.log("Inventory Database is");
-  console.log(req.inventory);
-  console.log("Entire session object:");
-  console.log(req.session);
-  next();
-});
 
 app.listen(8000, function () {
   console.log(

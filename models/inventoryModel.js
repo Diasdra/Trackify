@@ -13,7 +13,6 @@ const selectInventory = {
 }
 
 const inventoryModel = {
-
     addInventory: async (data) => {
         await prisma.inventory.create({
             data: {

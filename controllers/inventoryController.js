@@ -2,23 +2,14 @@ let inventoryModel = require("../models/inventoryModel").inventoryModel;
 
 let inventoryController = {
   list: (req, res) => {
-    console.log('hi'),
+    let inventory = req.body.inventory || [] 
     res.render("inventory", { 
-      inventory: req.inventory,
+      inventory,
      });
   },
 
   new: (req, res) => {
     res.render("/");
-  },
-
-  listOne: async (req, res) => {
-    let r = await inventoryModel.findInventory(req.params.id, req.user.id)
-    if (r != null) {
-      res.render("reminder/single-reminder", { reminderItem: r });
-    } else {
-      res.redirect("reminders");
-    }
   },
 
   create: async (req, res) => {
@@ -71,7 +62,7 @@ let inventoryController = {
   },
 
   delete: async (req, res) => {
-    await userModel.deleteReminder({
+    await inventoryModel.deleteReminder({
       id: req.params.id
     })
     .then(()=> {
