@@ -3,16 +3,16 @@ let inventoryModel = require("../models/inventoryModel").inventoryModel;
 let inventoryController = {
   list: (req, res) => {
     res.render("inventory", { 
-      inventory: req.reminders,
+      inventory: req.inventory,
      });
   },
 
   new: (req, res) => {
-    res.render("reminder/create");
+    res.render("/");
   },
 
   listOne: async (req, res) => {
-    let r = await userModel.findReminder(req.params.id, req.user.id)
+    let r = await inventoryModel.findInventory(req.params.id, req.user.id)
     if (r != null) {
       res.render("reminder/single-reminder", { reminderItem: r });
     } else {
@@ -21,27 +21,28 @@ let inventoryController = {
   },
 
   create: async (req, res) => {
-    await userModel.addReminder({
-      title: req.body.title,
-      body: req.body.description,
-      tags: req.body.tags,
-      date: req.body.date,
-      userId: req.user.id
+    await inventoryModel.addInventory({
+      product: req.body.product,
+      product_category: req.body.product_category,
+      qty: req.body.qty,
+      price: req.body.price,
+      vendor: req.body.vendor,
+      location: req.body.location
     })
     .then(() => {
-      res.redirect("/reminders");
+      res.redirect("/inventory");
     })
   },
 
-  edit: (req, res) => {
-    let reminderToFind = req.params.id;
+/*   edit: (req, res) => {
+    let itemToFind = req.params.id;
     let searchResult = req.user.reminders.find(function (reminder) {
       return reminder.id == reminderToFind;
     });
-    res.render("reminder/edit", { reminderItem: searchResult });
-  },
+    res.render("edit", { reminderItem: searchResult });
+  }, */
 
-  search: (req, res) => {
+/*   search: (req, res) => {
     res.render("reminder/search", {reminders: null})
     },
 
@@ -52,20 +53,19 @@ let inventoryController = {
     } else {
       res.render("reminder/search", {reminders: null});
     }
-  },
+  }, */
 
   update: async (req, res) => {
-    await userModel.updateReminder({
-      id: req.params.id,
-      title: req.body.title,
-      body: req.body.description,
-      date: req.body.date,
-      userId: req.user.id,
-      completed: JSON.parse(req.body.completed),
-      tags: req.body.tags
+    await inventoryModel.updateinventory({
+      product: req.body.product,
+      product_category: req.body.product_category,
+      qty: req.body.qty,
+      price: req.body.price,
+      vendor: req.body.vendor,
+      location: req.body.location
     })
     .then(() => {
-      res.redirect('/reminders');
+      res.redirect('/inventory');
     })
   },
 
@@ -74,9 +74,9 @@ let inventoryController = {
       id: req.params.id
     })
     .then(()=> {
-      res.redirect('/reminders')
+      res.redirect('/inventory')
     })
   },
 };
 
-///module.exports = remindersController;
+module.exports = inventoryController;

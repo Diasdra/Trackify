@@ -3,6 +3,8 @@ const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const session = require("express-session")
+const inventoryController = require("./controllers/inventoryController");
+
 require('dotenv').config();
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -22,12 +24,11 @@ app.set("views", path.join(__dirname, "/views"))
 app.set("view engine", "ejs");
 
 // Routes start here
-app.get('/' ,(req, res) => {
-   res.render("inventory"); 
-   console.log(req);})
+app.get('/' ,(req, res) => {res.render("inventory")})
 app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
-app.get('/add', (req, res) => { res.render("Add_Product") })
+app.get('/create', (req, res) => { res.render("create") })
+app.post('/create', (req, res) => { inventoryController.create })
 
 //Debugging console logs
 app.use((req, res, next) => {

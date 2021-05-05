@@ -2,7 +2,7 @@
 <div class="container">
     
 <div class="content">
-    <form method="POST" action="/add">
+    <form method="POST" action="/create">
         <div class="product">
             <div class="label">
                 <label for="prod">Product</label>
@@ -16,7 +16,7 @@
                 <label for="prodcat">Product Category</label>
             </div>
             <div class="text">
-                <input type ="text" id="prodcat" name="productcategory" placeholder="product category">
+                <input type ="text" id="prodcat" name="product_category" placeholder="product category">
             </div>
         </div>
         <div class="productID">
@@ -29,6 +29,8 @@
         </div>
         <div class="quantity">
         </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </div>
 
 <!-- Product, Product Category, Product ID, Quantity In Stock,
