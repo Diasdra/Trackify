@@ -24,7 +24,7 @@ app.set("views", path.join(__dirname, "/views"))
 app.set("view engine", "ejs");
 
 // Routes start here
-app.get('/' ,(req, res) => {res.render("inventory")})
+app.get('/' ,(req, res) => {inventoryController.list})
 app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
 app.get('/create', (req, res) => { res.render("create") })

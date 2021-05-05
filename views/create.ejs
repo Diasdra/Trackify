@@ -1,37 +1,58 @@
-
 <div class="container">
     
-<div class="content">
-    <form method="POST" action="/create">
-        <div class="product">
-            <div class="label">
-                <label for="prod">Product</label>
+    <div class="content">
+        <form method="POST" action="https://simple-form.com/your-email-here">
+            <div class="product">
+                <div class="label">
+                    <label for="prod">Product</label>
+                </div>
+                <div class="text">
+                    <input type="text" id="prod" name="product" placeholder="product name">
+                </div>
             </div>
-            <div class="text">
-                <input type="text" id="prod" name="product" placeholder="product name">
+            <div class="productcategory">
+                <div class="label">
+                    <label for="product">Product Category</label>
+                </div>
+                <div class="text">
+                    <input type ="text" id="product" name="productcategory" placeholder="product category">
+                </div>
             </div>
-        </div>
-        <div class="productcategory">
-            <div class="label">
-                <label for="prodcat">Product Category</label>
+            <div class="quantity">
+                <div class="label">
+                    <label for="quant">Quantity In Stock</label>
+                </div>
+                <div class="text">
+                    <input type="text" id="quant" name="quantity" placeholder="available quantity">
+                </div>
             </div>
-            <div class="text">
-                <input type ="text" id="prodcat" name="product_category" placeholder="product category">
+            <div class="price">
+                <div class="label">
+                    <label for="punit">Price Unit</label>
+                </div>
+                <div class="text">
+                    <input type="text" id="punit" name="price" placeholder="price per unit">
+                </div>
             </div>
-        </div>
-        <div class="productID">
-            <div class="label">
-                <label for="prodID">Product ID</label>
+            <div class="vendor">
+                <div class="label">
+                    <label for="vend">Vendor</label>
+                </div>
+                <div class="text">
+                    <input type="text" id="vend" name="vendor" placeholder="vendor name">
+                </div>
             </div>
-            <div class="text">
-                <input type="text" id="prodID" name="productID" placeholder="product ID">
+            <div class="location">
+                <div class="label">
+                    <label for="city">Location</label>
+                </div>
+                <div class="text">
+                    <input type="text" id="city" name="location" placeholder="location (city)">
+                </div>
             </div>
-        </div>
-        <div class="quantity">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
+        </form>
+    </div>
+
 
 <!-- Product, Product Category, Product ID, Quantity In Stock,
      Price Unit, Vendor, Location

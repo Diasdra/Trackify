@@ -2,6 +2,7 @@ let inventoryModel = require("../models/inventoryModel").inventoryModel;
 
 let inventoryController = {
   list: (req, res) => {
+    console.log('hi'),
     res.render("inventory", { 
       inventory: req.inventory,
      });

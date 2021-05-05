@@ -15,7 +15,6 @@ const selectInventory = {
 const inventoryModel = {
 
     addInventory: async (data) => {
-
         await prisma.inventory.create({
             data: {
                 product: data.product,
@@ -34,6 +33,19 @@ const inventoryModel = {
             data: data
         });
     },
+
+    findInventory: async (inventoryId) => {
+        const stock = await prisma.inventory.findUnique({
+            select: {inventory: {
+                where: {id: inventoryId},
+                select: selectInventory
+            }}
+        })
+        if (stock.inventory){
+            return stock.inventory[0]
+        } else {
+            return null
+    }},
 
     deleteInventory: async(data) => {
         await prisma.inventory.delete({

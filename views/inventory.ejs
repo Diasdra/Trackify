@@ -48,7 +48,13 @@
             </ul>
 
         </div>
-
+        <div>
+            <% if (inventory !== null) { %>
+                <% inventory.forEach(function (item) { %>
+                    <%= item.qty %>:
+                <% }) %>
+            <% } %>
+        </div>
         <table>
             <tr>
                 <th>Product</th>
@@ -60,7 +66,7 @@
                 <th>Location</th>
             </tr>
             <tr>
-                <td>Apples</td>
+                <td></td>
                 <td>Fruits</td>
                 <td>QNFTM</td>
                 <td>250</td>
