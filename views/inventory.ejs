@@ -4,7 +4,7 @@
     <div class="content">
         <div class="search">
             <label for="search">Search Products:</label>
-            <input type="search">
+            <input type="search" id="filter">
         </div>
 
         <div class="order">
@@ -56,51 +56,56 @@
             <% } %>
         </div>
         <table>
-            <tr>
-                <th>Product</th>
-                <th>Product Category</th>
-                <th>Product ID</th>
-                <th>Quantity In Stock</th>
-                <th>Price Unit</th>
-                <th>Vendor</th>
-                <th>Location</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td>Fruits</td>
-                <td>QNFTM</td>
-                <td>250</td>
-                <td>$.99</td>
-                <td>Kim's Farm</td>
-                <td>Langley</td>
-            </tr>
-            <tr>
-                <td>Oranges</td>
-                <td>Fruits</td>
-                <td>C2L09</td>
-                <td>300</td>
-                <td>$0.85</td>
-                <td>Kim's Farm</td>
-                <td>Langley</td>
-            </tr>
-            <tr>
-                <td>Passion Fruits</td>
-                <td>Fruits</td>
-                <td>1NTUT</td>
-                <td>260</td>
-                <td>$3.00</td>
-                <td>Hong's Exotic Foods</td>
-                <td>Richmond</td>
-            </tr>
-            <tr>
-                <td>Glazed Donuts</td>
-                <td>Desserts</td>
-                <td>3AHDX</td>
-                <td>600</td>
-                <td>$1.00</td>
-                <td>Second Desserts</td>
-                <td>Vancouver</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Category</th>
+                    <th>Product ID</th>
+                    <th>Quantity In Stock</th>
+                    <th>Price Unit</th>
+                    <th>Vendor</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                <tr>
+                    <td></td>
+                    <td>Fruits</td>
+                    <td>QNFTM</td>
+                    <td>250</td>
+                    <td>$.99</td>
+                    <td>Kim's Farm</td>
+                    <td>Langley</td>
+                </tr>
+                <tr>
+                    <td>Oranges</td>
+                    <td>Fruits</td>
+                    <td>C2L09</td>
+                    <td>300</td>
+                    <td>$0.85</td>
+                    <td>Kim's Farm</td>
+                    <td>Langley</td>
+                </tr>
+                <tr>
+                    <td>Passion Fruits</td>
+                    <td>Fruits</td>
+                    <td>1NTUT</td>
+                    <td>260</td>
+                    <td>$3.00</td>
+                    <td>Hong's Exotic Foods</td>
+                    <td>Richmond</td>
+                </tr>
+                <tr>
+                    <td>Glazed Donuts</td>
+                    <td>Desserts</td>
+                    <td>3AHDX</td>
+                    <td>600</td>
+                    <td>$1.00</td>
+                    <td>Second Desserts</td>
+                    <td>Vancouver</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
+<script src='app.js'></script>
