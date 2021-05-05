@@ -24,10 +24,12 @@
     "method-override": "^2.3.7",
     "mongoose": "^5.12.7",
     "node-fetch": "^2.6.1",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.19.4",
+    "npm": "^7.11.2",
     "passport": "^0.4.1",
     "passport-github": "^1.1.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "readable-stream": "^2.3.7"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
