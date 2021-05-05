@@ -21,10 +21,10 @@ app.use(session({
 app.set("views", path.join(__dirname, "/views"))
 app.set("view engine", "ejs");
 
-app.get('/' ,(req, res) => {
-  res.render("inventory");
-})
-
+// Routes start here
+app.get('/' ,(req, res) => { res.render("inventory") })
+app.get('/about', (req, res) => { res.render("about") })
+app.get('/contact', (req, res) => { res.render("contact") })
 
 //Debugging console logs
 app.use((req, res, next) => {
