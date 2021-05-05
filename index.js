@@ -22,13 +22,16 @@ app.set("views", path.join(__dirname, "/views"))
 app.set("view engine", "ejs");
 
 // Routes start here
-app.get('/' ,(req, res) => { res.render("inventory") })
+app.get('/' ,(req, res) => {
+   res.render("inventory"); 
+   console.log(req);})
 app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
+app.get('/add', (req, res) => { res.render("Add_Product") })
 
 //Debugging console logs
 app.use((req, res, next) => {
-  console.log("User details are: ");
+  console.log("Inventory Database is");
   console.log(req.inventory);
   console.log("Entire session object:");
   console.log(req.session);
