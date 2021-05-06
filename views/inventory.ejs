@@ -49,11 +49,6 @@
 
         </div>
         <div>
-            <% if (inventory !== null) { %>
-                <% inventory.forEach(function (item) { %>
-                    <%= item.qty %>:
-                <% }) %>
-            <% } %>
         </div>
         <table>
             <tr>
@@ -65,15 +60,20 @@
                 <th>Vendor</th>
                 <th>Location</th>
             </tr>
-            <tr>
-                <td></td>
-                <td>Fruits</td>
-                <td>QNFTM</td>
-                <td>250</td>
-                <td>$.99</td>
-                <td>Kim's Farm</td>
-                <td>Langley</td>
-            </tr>
+            
+                <% if (inventory !== null) { %>
+                    <% inventory.forEach(function (item) { %>
+                    <tr>
+                        <td><%=item.product %> </td>
+                        <td><%=item.product_category %> </td>
+                        <td><%=item.id %> </td>
+                        <td><%=item.qty %> </td>
+                        <td><%=item.price %> </td>
+                        <td><%=item.vendor %> </td>
+                        <td><%=item.location %> </td>
+                    </tr>
+                    <% }) %>
+                <% } %>
             <tr>
                 <td>Oranges</td>
                 <td>Fruits</td>
@@ -82,24 +82,6 @@
                 <td>$0.85</td>
                 <td>Kim's Farm</td>
                 <td>Langley</td>
-            </tr>
-            <tr>
-                <td>Passion Fruits</td>
-                <td>Fruits</td>
-                <td>1NTUT</td>
-                <td>260</td>
-                <td>$3.00</td>
-                <td>Hong's Exotic Foods</td>
-                <td>Richmond</td>
-            </tr>
-            <tr>
-                <td>Glazed Donuts</td>
-                <td>Desserts</td>
-                <td>3AHDX</td>
-                <td>600</td>
-                <td>$1.00</td>
-                <td>Second Desserts</td>
-                <td>Vancouver</td>
             </tr>
         </table>
     </div>

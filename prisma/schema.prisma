@@ -5,9 +5,6 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
-generator client {
-  provider = "prisma-client-js"
-}
 
 model Inventory {
   // Product Information
@@ -15,7 +12,7 @@ model Inventory {
   product               String   @unique
   product_category      String 
   qty                   Int       @default(0)
-  price                 Float
+  price                 String
   vendor                String? 
   location              String?
 

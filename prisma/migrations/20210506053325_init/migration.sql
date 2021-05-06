@@ -8,3 +8,6 @@ CREATE TABLE "inventory" (
     "vendor" TEXT,
     "location" TEXT
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "inventory.product_unique" ON "inventory"("product");

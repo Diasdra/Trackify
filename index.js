@@ -4,6 +4,9 @@ const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const session = require("express-session")
 const inventoryController = require("./controllers/inventoryController");
+const PrismaClient = require("@prisma/client").PrismaClient
+const prisma = new PrismaClient()
+
 
 require('dotenv').config();
 
@@ -21,9 +24,10 @@ app.use(session({
 }));
 
 //Debugging console logs
-app.use((req, res, next) => {
+app.use(async (req, res, next) => {
   console.log("Inventory Database is");
-  console.log(req.body.inventory);
+  req.inventory = await prisma.inventory.findMany()
+  console.log(req.inventory)
   console.log("Entire session object:");
   console.log(req.session);
   next();
@@ -38,7 +42,8 @@ app.get('/' , inventoryController.list)
 app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
 app.get('/create', (req, res) => { res.render("create") })
-app.post('/create', (req, res) => { inventoryController.create })
+app.post('/create', inventoryController.create)
+app.get('/inventory', inventoryController.list)
 
 
 app.listen(8000, function () {
