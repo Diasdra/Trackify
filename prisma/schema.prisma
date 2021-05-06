@@ -6,13 +6,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+generator client {
+  provider = "prisma-client-js"
+}
+
 model Inventory {
   // Product Information
   id                    Int      @id @default(autoincrement())
   product               String   @unique
   product_category      String 
   qty                   Int       @default(0)
-  price                 String
+  price                 Float
   vendor                String? 
   location              String?
 
