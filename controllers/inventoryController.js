@@ -12,8 +12,8 @@ let inventoryController = {
     await inventoryModel.addInventory({
       product: req.body.product,
       product_category: req.body.product_category,
-      qty: req.body.qty,
-      price: req.body.price,
+      qty: parseInt(req.body.qty),
+      price: parseFloat(req.body.price),
       vendor: req.body.vendor,
       location: req.body.location
     })
