@@ -1,0 +1,73 @@
+html {
+    box-sizing: border-box;
+    background-color: #D4C8BE;
+    font-family: 'IBM Plex Serif', san-serif;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+h1 {
+    margin-left: 1rem;
+}
+
+p1 {
+    margin-left: 1rem;
+    color: #3d362d;
+}
+
+.column {
+    float: left;
+    width: 50%%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+}
+/* Laying out bio side by side */
+
+@media screen and (max-width: 650px) {
+    .column {
+        width: 100%;
+        display: block;
+    }
+}
+/* Laying out of bio vertically, as opposed to side by side */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #c7c7bb;
+}
+/* Adding of shadows to bio card */
+
+.container {
+    padding: 0 16px;
+}
+
+.container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.title {
+    color: #7F867B;
+}
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #af9f8c;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+/* <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet"> */
