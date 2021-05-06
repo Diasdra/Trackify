@@ -1,0 +1,53 @@
+* {
+    font-family: 'IBM Plex Serif', sans-serif;
+    background-color: #D4C8BE;
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    width: 50rem;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #af9f8c;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    float: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input[type=submit]:hover {
+    background-color: #555;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 5rem 2fr 5rem;
+    grid-template-rows: 20px 1fr;
+    grid-template-columns: 50rem 1fr;
+    grid-template-areas:
+    'content content content';
+    height: auto;
+    width: auto;
+}
+
+h1 {
+    padding-left: 20px;
+}
+
+.content {
+    grid-area: content;
+    padding-left: 20px;
+}
