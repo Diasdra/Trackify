@@ -26,6 +26,7 @@ input[type=submit] {
     float: inherit;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: none;
 }
 
 input[type=submit]:hover {
