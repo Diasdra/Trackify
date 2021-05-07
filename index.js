@@ -24,11 +24,14 @@ app.use(session({
       expires: 600000
   }
 }));
+app.use(async (req, res, next) => {
+  req.inventory = await prisma.inventory.findMany()
+  next()
+})
 
-//Debugging console logs
+// Debugging console logs
 // app.use(async (req, res, next) => {
 //   console.log("Inventory Database is");
-//   req.inventory = await prisma.inventory.findMany()
 //   console.log(req.inventory)
 //   console.log("Entire session object:");
 //   console.log(req.session);

@@ -3,6 +3,7 @@ let inventoryModel = require("../models/inventoryModel").inventoryModel;
 let inventoryController = {
   list: (req, res) => {
     let inventory = req.inventory
+    // console.log(inventory)
     res.render("inventory", { 
       inventory,
      });
@@ -15,7 +16,6 @@ let inventoryController = {
     const qty = Number(req.body.qty)
     const price = Number(req.body.price)
     if(isNaN(qty) || isNaN(price)) {
-      console.log('Error in data')
       res.status(400).send({"error": "Wrong data entered"})
     } else {
       await inventoryModel.addInventory({
