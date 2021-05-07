@@ -44,6 +44,5 @@ it("creates an item with wrong data", async () => {
     .post("/create")
     .send(item2)
     .expect(400)
-
     expect(response.body).toEqual({"error": "Wrong data entered"})
 })

@@ -1,8 +1,10 @@
 const filter = document.querySelector("#filter")
+console.log(filter)
 const tableBody = document.querySelector(".table-body")
 
 filter.addEventListener("keyup", e => {
   let filterValue = filter.value.toLowerCase()
+  console.log(filterValue)
   let table = tableBody.querySelectorAll("tr")
 
   for (let product of table) {

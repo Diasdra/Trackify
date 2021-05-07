@@ -18,9 +18,9 @@
     <div class="content">
         <div class="search">
             <label for="search">Search Products:</label>
-            <input type="search" id="filter">
+            <input type="text" id="filter">
         </div>
-
+        
         <div class="order">
             <label for="sort">Order By:</label>
             <select name="order" id="order">
@@ -31,16 +31,16 @@
                 <option value="quantityLow">Quantity: Low->High</option>
             </select>
         </div>
-
+        
         <div class="sort">
-
+            
             <label for="priceRange">Price Range:</label>
             <input type="range" name="priceRange" id="priceRange" min="0" max="10000">
             <!-- max for ranges to be determined by maximum values in inventory-->
-
+            
             <label for="quantityRange">Quantity Range:</label>
             <input type="range" name="quantityRange" id="quantityRange" min="0" max="10000">
-
+            
             <label for="category">Categories:</label>
             <ul>
                 <li>
@@ -60,43 +60,46 @@
                     <label for="category4">Category4</label>
                 </li>
             </ul>
-
+            
         </div>
         <div>
         </div>
         <table>
-            <tr>
-                <th>Product</th>
-                <th>Product Category</th>
-                <th>Product ID</th>
-                <th>Quantity In Stock</th>
-                <th>Price Unit</th>
-                <th>Vendor</th>
-                <th>Location</th>
-            </tr>
-            
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Product Category</th>
+                    <th>Product ID</th>
+                    <th>Quantity In Stock</th>
+                    <th>Price Unit</th>
+                    <th>Vendor</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody class='table-body'>
                 <% if (inventory !== null && inventory !== undefined) { %>
                     <% inventory.forEach(function (item) { %>
-                    <tr>
-                        <td><%=item.product %> </td>
-                        <td><%=item.product_category %> </td>
-                        <td><%=item.id %> </td>
-                        <td><%=item.qty %> </td>
-                        <td><%=item.price %> </td>
-                        <td><%=item.vendor %> </td>
-                        <td><%=item.location %> </td>
-                    </tr>
-                    <% }) %>
-                <% } %>
-            <tr>
-                <td>Oranges</td>
-                <td>Fruits</td>
-                <td>C2L09</td>
-                <td>300</td>
-                <td>$0.85</td>
-                <td>Kim's Farm</td>
-                <td>Langley</td>
-            </tr>
+                        <tr>
+                            <td><%=item.product %> </td>
+                            <td><%=item.product_category %> </td>
+                            <td><%=item.id %> </td>
+                            <td><%=item.qty %> </td>
+                            <td><%=item.price %> </td>
+                            <td><%=item.vendor %> </td>
+                            <td><%=item.location %> </td>
+                        </tr>
+                        <% }) %>
+                        <% } %>
+                        <tr>
+                            <td>Oranges</td>
+                            <td>Fruits</td>
+                            <td>C2L09</td>
+                            <td>300</td>
+                            <td>$0.85</td>
+                            <td>Kim's Farm</td>
+                            <td>Langley</td>
+                        </tr>
+            </tbody>
         </table>
     </div>
 </div>
