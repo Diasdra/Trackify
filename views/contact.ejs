@@ -1,60 +1,65 @@
-
-<h1>Contact Us</h1>
-<p>Please fill in your information and we will get back to you in no time.</p>
-<div class="container">
-    
+<head>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <h1>Contact Us</h1>
+    <p>Please fill in your information and we will get back to you in no time.</p>
     <div class="container">
-        <div class="content">
-            <form method="POST" action="https://simple-form.com/your-email-here">
-                <div class="firstname">
-                    <div class="label">
-                        <label for="fname">First Name</label>
+        
+        <div class="container">
+            <div class="content">
+                <form method="POST" action="https://simple-form.com/your-email-here">
+                    <div class="firstname">
+                        <div class="label">
+                            <label for="fname">First Name</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="fname" name="firstname" placeholder="your first name">
+                        </div>
                     </div>
-                    <div class="text">
-                        <input type="text" id="fname" name="firstname" placeholder="your first name">
+                    <div class="lastname">
+                        <div class="label">
+                            <label for="lname">Last Name</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="lname" name="lastname" placeholder="your last name">
+                        </div>
                     </div>
-                </div>
-                <div class="lastname">
-                    <div class="label">
-                        <label for="lname">Last Name</label>
+                    <div class="email">
+                        <div class="label">
+                            <label for="contactemail">E-Mail</label>
+                        </div>
+                        <div class="text"></div>
+                        <input type="text" id="contactemail" name="email" placeholder="your contact email">
                     </div>
-                    <div class="text">
-                        <input type="text" id="lname" name="lastname" placeholder="your last name">
-                    </div>
-                </div>
-                <div class="email">
-                    <div class="label">
-                        <label for="contactemail">E-Mail</label>
-                    </div>
-                    <div class="text"></div>
-                    <input type="text" id="contactemail" name="email" placeholder="your contact email">
-                </div>
-        </div>
-        <div class="message_subject">
-            <div class="label">
-                <label for="subject">Subject</label>
             </div>
-            <div class="text">
-                <select id="subject" name="subject">
-                    <option value="none">--------</option>
-                    <option value="inquiry">Inquiry</option>
-                    <option value="concerns">Concern(s)</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Others</option>
-                </select>
-            </div>
-            <div class="subject">
+            <div class="message_subject">
                 <div class="label">
-                    <label id="subject">Subject</label>
+                    <label for="subject">Subject</label>
                 </div>
                 <div class="text">
-                    <textarea id="subject" name="subject" placeholder="your message..."
-                        style="height: 250px"></textarea>
+                    <select id="subject" name="subject">
+                        <option value="none">--------</option>
+                        <option value="inquiry">Inquiry</option>
+                        <option value="concerns">Concern(s)</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="other">Others</option>
+                    </select>
                 </div>
+                <div class="subject">
+                    <div class="label">
+                        <label id="subject">Subject</label>
+                    </div>
+                    <div class="text">
+                        <textarea id="subject" name="subject" placeholder="your message..."
+                            style="height: 250px"></textarea>
+                    </div>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="Submit">
+                </div>
+                </form>
             </div>
-            <div class="submit">
-                <input type="submit" value="Submit">
-            </div>
-            </form>
         </div>
     </div>
+</body>
