@@ -49,5 +49,5 @@ h1 {
 
 .content {
     grid-area: content;
-    padding-left: 10px;
+    padding-left: 0px;
 }
