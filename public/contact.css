@@ -16,6 +16,7 @@ input[type=text], select, textarea {
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
+    color: #7f867b;
 }
 
 input[type=submit] {
@@ -26,6 +27,7 @@ input[type=submit] {
     float: inherit;
     margin-top: 10px;
     margin-bottom: 10px;
+    border: none;
 }
 
 input[type=submit]:hover {
