@@ -1,7 +1,7 @@
 html {
     box-sizing: border-box;
     background-color: #D4C8BE;
-    font-family: 'IBM Plex Serif', san-serif;
+    font-family: 'IBM Plex Serif', sans-serif;
 }
 
 *, *:before, *:after {
