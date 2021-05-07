@@ -16,7 +16,10 @@ input[type=text], select, textarea {
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
-    color: #7f867b;
+}
+
+option {
+    color: #7F867B;
 }
 
 input[type=submit] {
