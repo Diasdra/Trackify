@@ -21,7 +21,7 @@ label {
 input[type=submit] {
     background-color: #af9f8c;
     color: white;
-    padding: 0px 10px;
+    padding: 10px 10px;
     cursor: pointer;
     float: inherit;
     margin-top: 10px;
@@ -49,5 +49,5 @@ h1 {
 
 .content {
     grid-area: content;
-    padding-left: 20px;
+    padding-left: 10px;
 }
