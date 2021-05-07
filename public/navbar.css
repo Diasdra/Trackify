@@ -1,5 +1,25 @@
 * {
     font-family: 'IBM Plex Serif', sans-serif;
-    background-color: #D4C8BE;
     box-sizing: border-box;
+}
+
+.navbar {
+    background-color: #af9f8c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-header {
+
 }
