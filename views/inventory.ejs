@@ -61,7 +61,7 @@
                 <th>Location</th>
             </tr>
             
-                <% if (inventory !== null) { %>
+                <% if (inventory !== null && inventory !== undefined) { %>
                     <% inventory.forEach(function (item) { %>
                     <tr>
                         <td><%=item.product %> </td>
