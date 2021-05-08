@@ -1,6 +1,6 @@
-html {
+body {
     box-sizing: border-box;
-    background-color: #D4C8BE;
+    background-color: var(--background);
     font-family: 'IBM Plex Serif', sans-serif;
 }
 
@@ -10,11 +10,12 @@ html {
 
 h1 {
     margin-left: 1rem;
+    color: var(--header)
 }
 
 p1 {
     margin-left: 1rem;
-    color: #3d362d;
+    color: var(--header);
 }
 
 .column {
@@ -35,12 +36,13 @@ p1 {
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: #c7c7bb;
+    background-color: var(--background3)
 }
 /* Adding of shadows to bio card */
 
 .container {
-    padding: 0 16px;
+    padding: 0px 16px;
+    color: var(--text)
 }
 
 .container::after, .row::after {
@@ -49,8 +51,12 @@ p1 {
     display: table;
 }
 
+h2 {
+    color: var(--header);
+}
+
 .title {
-    color: #7F867B;
+    color: var(--sub-header);
 }
 
 .button {
@@ -58,16 +64,88 @@ p1 {
     outline: 0;
     display: inline-block;
     padding: 8px;
-    color: white;
-    background-color: #af9f8c;
+    color: var(--text);
+    background-color: var(--background2);
     text-align: center;
     cursor: pointer;
     width: 100%;
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: var(--hover);
+    color: var(--header);
 }
 
 /* <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet"> */
+
+body[data-theme="dark"] {
+    --background: #393552;
+    --background2: #232136;
+    --header: #e0def4;
+    --background3: #575279;
+    --hover: #817c9c;
+    --sub-header: #9ccfd8;
+    --text: #fff;
+    --text2: #000;
+}
+
+body[data-theme="light"] {
+    --background: #D4C8BE;
+    --background2: #af9f8c;
+    --header: #3d362d;
+    --background3: #c7c7bb;
+    --hover: #e3e4e0;
+    --sub-header: #7F867B;
+    --text: #fff;
+    --text2: #000;
+}
+
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--background3);
+    position: sticky;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.navbar ul li {
+    float: right;
+    color: var(--header);
+    border-left: 1px solid var(--background2);
+}
+
+.navbar ul li:not(:first-child):hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+    border-right: 1px solid var(--background2);
+}
+
+.navbar ul li:first-child {
+    float: left;
+    border-left: none;
+}
+
+li div a {
+    text-decoration: none;
+    display: block;
+    padding: 16px 16px;
+    float: right;
+    color: var(--header);
+    
+}
+li div a:hover:not(.active) {
+    background-color: var(--hover);
+}
+.active {
+    background-color: var(--sub-header);
+    color: var(--text);
+}
+
+.nav-header h1{
+    font-size: 20px;
+}
