@@ -51,5 +51,18 @@ const inventoryModel = {
             where: {id: data.id}
         })
     },
+
+    findNameInventory: async(product) => {
+      const item = await prisma.inventory.findUnique({
+        select: {inventory: {
+          where: {product: product},
+          select: selectInventory
+        }}
+      })
+      if (item.inventory){
+        return item.inventory[0]
+    } else {
+        return null
+    }},
 }
 module.exports = {inventoryModel};
