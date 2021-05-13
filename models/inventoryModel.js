@@ -27,6 +27,7 @@ const inventoryModel = {
     },
 
     updateInventory: async (data) => {
+        console.log("test")
         await prisma.inventory.update({
             where: { id: data.id},
             data: data

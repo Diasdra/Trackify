@@ -24,6 +24,8 @@ app.use(session({
       expires: 600000
   }
 }));
+
+//serializes inventory
 app.use(async (req, res, next) => {
   req.inventory = await prisma.inventory.findMany()
   next()
@@ -49,6 +51,7 @@ app.get('/contact', (req, res) => { res.render("contact") })
 app.get('/create', (req, res) => { res.render("create") })
 app.post('/create', inventoryController.create)
 app.get('/inventory', inventoryController.list)
+app.post('/inventory', inventoryController.update)
 
 
 run = app.listen(8000, function () {
