@@ -1,3 +1,4 @@
+
 body[data-theme="dark"] {
     --background: #393552;
     --background2: #232136;
@@ -20,10 +21,25 @@ body[data-theme="light"] {
     --text2: #000;
 }
 
+.sidebar {
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     background-color: var(--background);
     font-family: 'IBM Plex Serif', sans-serif;
     color: var(--text)
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 table, td {
@@ -36,12 +52,59 @@ th {
     border: 1px solid var(--text2);
     border-collapse: collapse;
     padding: 0.25rem;
+    padding-left: 3rem;
     padding-right: 3rem;
     background-color: var(--sub-header);
+    text-align: center;
+}
+
+tr {
+    text-align: right;
 }
 
 h1 {
+    margin-left: 18%;
+}
+
+h2 {
+    margin: 0.8rem;
     margin-left: 1rem;
+    font-size: 1.25rem;
+}
+
+.search {
+    font-size: 1.25rem;
+}
+
+.sortbox {
+    width: 4%;
+    height: 1rem;
+}
+
+.sort {
+    display: flex;
+    flex-direction: row;
+}
+
+.cat-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.sidebar > * {
+    padding: 0.25rem;
+}
+
+.sort > * {
+    margin: 0.25rem;
+}
+
+#filter {
+    border: 2px solid var(--header);
+    border-radius: 5px;
+    font-size: 1.25rem;
+    width:35%
 }
 
 .edit-btn {
