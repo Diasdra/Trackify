@@ -1,0 +1,123 @@
+body[data-theme="dark"] {
+    --background: #393552;
+    --background2: #232136;
+    --header: #e0def4;
+    --background3: #575279;
+    --hover: #817c9c;
+    --sub-header: #9ccfd8;
+    --text: #fff;
+    --text2: #000;
+}
+
+body[data-theme="light"] {
+    --background: #D4C8BE;
+    --background2: #af9f8c;
+    --header: #3d362d;
+    --background3: #c7c7bb;
+    --hover: #e3e4e0;
+    --sub-header: #7F867B;
+    --text: #26233a;
+    --text2: #000;
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'IBM Plex Serif', sans-serif;
+    color: var(--text)
+}
+
+table, td {
+    border: 1px solid var(--text2);
+    border-collapse: collapse;
+    padding: 0.25rem;
+}
+
+th {
+    border: 1px solid var(--text2);
+    border-collapse: collapse;
+    padding: 0.25rem;
+    padding-right: 3rem;
+    background-color: var(--sub-header);
+}
+
+h1 {
+    margin-left: 1rem;
+}
+
+.edit-btn {
+	box-shadow:inset 0px 1px 0px 0px var(--hover);
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:var(--text2);
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px var(--hover);
+}
+.edit-btn:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+.edit-btn:active {
+	position:relative;
+	top:1px;
+}
+
+tr:nth-child(even) {background-color: var(--hover)}
+
+tr:nth-child(odd) {background-color: var(--background3)}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--background3);
+    position: sticky;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.navbar ul li {
+    float: right;
+    color: var(--header);
+    border-left: 1px solid var(--background2);
+}
+
+.navbar ul li:not(:first-child):hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+    border-right: 1px solid var(--background2);
+}
+
+.navbar ul li:first-child {
+    float: left;
+    border-left: none;
+}
+
+li div a {
+    text-decoration: none;
+    display: block;
+    padding: 16px 16px;
+    float: right;
+    color: var(--header);
+    
+}
+li div a:hover:not(.active) {
+    background-color: var(--hover);
+}
+.active {
+    background-color: var(--sub-header);
+    color: var(--text);
+}
+
+.nav-header h1{
+    font-size: 20px;
+}
+
