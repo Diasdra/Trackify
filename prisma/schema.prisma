@@ -12,7 +12,7 @@ generator client {
 
 model Inventory {
   // Product Information
-  id                    Int      @id @default(autoincrement())
+  id                    Int      @id // @default(autoincrement())
   product               String   @unique
   product_category      String 
   qty                   Int       @default(0)

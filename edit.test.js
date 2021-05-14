@@ -14,6 +14,7 @@ afterAll(async (done) => {
 })
 
 const item1 = {
+  id: '9999',
   product: 'Test Item',
   product_category: 'Test Category',
   qty: '30',
@@ -23,6 +24,7 @@ const item1 = {
 }
 
 const item2 = {
+  id: '9999',
   product: 'Test Item 2',
   product_category: 'Test Category',
   qty: '30.o',
@@ -31,9 +33,17 @@ const item2 = {
   location: 'Test Location'
 }
 
+it("creates an item", async done => {
+  const response = await request
+    .post("/create")
+    .send(item1)
+    .expect(302)
+    done()
+})
+
 it("edits an item", async done => {
   const response = await request
-    .post("/edit")
+    .post("/inventory")
     .send(item1)
     .expect(302)
     done()
@@ -41,8 +51,30 @@ it("edits an item", async done => {
 
 it("edits an item with wrong data", async () => {
   const response = await request
-    .post("/create")
+    .post("/inventory")
     .send(item2)
     .expect(400)
     expect(response.body).toEqual({"error": "Wrong data entered"})
 })
+
+// update: async (req, res) => {
+//   console.log(req.body)
+//   const qty = Number(req.body.qty)
+//   const price = Number(req.body.price)
+//   if(isNaN(qty) || isNaN(price)) {
+//     res.status(400).send({"error": "Wrong data entered"})
+//   } else {
+//     await inventoryModel.updateInventory({
+//       id: parseInt(req.body.id),
+//       product: req.body.product,
+//       product_category: req.body.product_category,
+//       qty: parseInt(req.body.qty),
+//       price: price,
+//       vendor: req.body.vendor,
+//       location: req.body.location
+//     })
+//     .then(() => {
+//       res.redirect('/inventory');
+//     })
+//   }
+// },
