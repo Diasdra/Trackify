@@ -15,10 +15,12 @@ let inventoryController = {
     //   req.body.vendor, req.body.location)
     const qty = Number(req.body.qty)
     const price = Number(req.body.price)
+    console.log(req.body.id)
     if(isNaN(qty) || isNaN(price)) {
       res.status(400).send({"error": "Wrong data entered"})
     } else {
       await inventoryModel.addInventory({
+        id: parseInt(req.body.id),
         product: req.body.product,
         product_category: req.body.product_category,
         qty: parseInt(req.body.qty),
@@ -49,7 +51,7 @@ let inventoryController = {
         location: req.body.location
       })
       .then(() => {
-        res.redirect('/inventory');
+        res.status(302).send({'success': 'added to the database'});
       })
     }
   },

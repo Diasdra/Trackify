@@ -51,8 +51,8 @@ for (let btn of editBtn) {
       // Making the post request
       // Make this into an external function eventually
       const currentURL = window.location.href,
-            XHR = new XMLHttpRequest(),
-            FD = new FormData();
+            XHR = new XMLHttpRequest()
+
       let data = {
         id: row.cells[2].innerHTML,
         product: row.cells[0].querySelector('input').value,

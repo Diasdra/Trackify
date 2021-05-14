@@ -16,6 +16,7 @@ const inventoryModel = {
     addInventory: async (data) => {
         await prisma.inventory.create({
             data: {
+                id: data.id,
                 product: data.product,
                 product_category: data.product_category,
                 qty: data.qty,
