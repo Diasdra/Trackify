@@ -3,6 +3,8 @@ console.log(filter)
 const tableBody = document.querySelector(".table-body")
 let editBtn = document.querySelectorAll(".edit-btn")
 
+
+// Searching functionality
 filter.addEventListener("keyup", e => {
   let filterValue = filter.value.toLowerCase()
   console.log(filterValue)
@@ -20,6 +22,7 @@ filter.addEventListener("keyup", e => {
   }
 })
 
+// Edit/Save button
 let editing = false
 let currentEditing = 0
 for (let btn of editBtn) {
@@ -45,15 +48,48 @@ for (let btn of editBtn) {
       }
     } else {
       editing = false
+      // Making the post request
+      // Make this into an external function eventually
+      const currentURL = window.location.href,
+            XHR = new XMLHttpRequest(),
+            FD = new FormData();
+      let data = {
+        id: row.cells[2].innerHTML,
+        product: row.cells[0].querySelector('input').value,
+        product_category: row.cells[1].querySelector('input').value,
+        qty: row.cells[3].querySelector('input').value,
+        price: row.cells[4].querySelector('input').value,
+        vendor: row.cells[5].querySelector('input').value,
+        location: row.cells[6].querySelector('input').value
+      }
+      // Success
+      XHR.addEventListener('load', (e) => {
+        console.log("Data submitted successfully")
+      })
+
+      // Error
+      XHR.addEventListener('error', (e) => {
+        console.log("Error submitting data")
+      })
+
+      // This is our request
+      console.log(`Posting to ${currentURL}`)
+      XHR.open('POST', currentURL)
+
+      XHR.setRequestHeader('Content-Type', 'application/json');
+
+      // Sending our JSON object
+      XHR.send(JSON.stringify(data))
+
       // Iterate through cells in the row
       for (let cell = 0; cell < 8; cell++) {
+        // Changing back to normal
         if (cell === 2) {
-          console.log("hi")
+
         } else if (cell === 7) {
           row.cells[cell].querySelector('.edit-btn').innerHTML = 'Edit'
         } else {
           let cellValue = row.cells[cell].querySelector('input').value
-          console.log(cellValue)
           row.cells[cell].innerHTML = cellValue
         }
       }

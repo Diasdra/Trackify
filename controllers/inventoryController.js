@@ -33,13 +33,14 @@ let inventoryController = {
   },
 
   update: async (req, res) => {
+    console.log(req.body)
     const qty = Number(req.body.qty)
     const price = Number(req.body.price)
     if(isNaN(qty) || isNaN(price)) {
       res.status(400).send({"error": "Wrong data entered"})
     } else {
-      await inventoryModel.updateinventory({
-        id: req.body.id,
+      await inventoryModel.updateInventory({
+        id: parseInt(req.body.id),
         product: req.body.product,
         product_category: req.body.product_category,
         qty: parseInt(req.body.qty),
