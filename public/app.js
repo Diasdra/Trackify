@@ -50,7 +50,7 @@ for (let btn of editBtn) {
       editing = false
       // Making the post request
       // Make this into an external function eventually
-      const currentURL = window.location.href,
+      const currentURL = `${window.location.href}inventory`,
             XHR = new XMLHttpRequest()
 
       let data = {
@@ -79,6 +79,7 @@ for (let btn of editBtn) {
       XHR.setRequestHeader('Content-Type', 'application/json');
 
       // Sending our JSON object
+      console.log(data)
       XHR.send(JSON.stringify(data))
 
       // Iterate through cells in the row
