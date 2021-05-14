@@ -21,10 +21,6 @@ body[data-theme="light"] {
     --text2: #000;
 }
 
-.sidebar {
-    
-}
-
 .container {
     display: flex;
     flex-direction: column;
