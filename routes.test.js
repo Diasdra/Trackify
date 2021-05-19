@@ -7,7 +7,6 @@ beforeAll((done) => {
 })
 
 afterAll(async (done) => {
-  await prisma.inventory.deleteMany()
   await prisma.$disconnect()
   run.close()
   done()
@@ -55,6 +54,22 @@ it("edits an item with wrong data", async () => {
     .send(item2)
     .expect(400)
     expect(response.body).toEqual({"error": "Wrong data entered"})
+})
+
+it("deletes an item", async () => {
+  const response = await request
+    .delete("/inventory")
+    .send({ id: item1.id })
+    .expect(200)
+    done()
+})
+
+it("deletes an that doesn't exist", async () => {
+  const response = await request
+    .delete("/inventory")
+    .send({ id: 1293841287342 })
+    .expect(200)
+    done()
 })
 
 // update: async (req, res) => {

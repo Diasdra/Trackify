@@ -1,5 +1,4 @@
 const filter = document.querySelector("#filter")
-console.log(filter)
 const tableBody = document.querySelector(".table-body")
 let editBtn = document.querySelectorAll(".edit-btn")
 let deleteBtn = document.querySelectorAll(".delete-btn")
@@ -18,10 +17,8 @@ filter.addEventListener("keyup", e => {
       } else {
           product.style.display = ""
       }
-      
   }
 })
-
 
 const sendRequest = (method, url, data) => {
   const XHR = new XMLHttpRequest()
@@ -46,7 +43,6 @@ const sendRequest = (method, url, data) => {
     console.log(data)
     XHR.send(JSON.stringify(data))
 }
-
 
 // Edit/Save button
 let editing = false
@@ -118,12 +114,3 @@ for (let btn of deleteBtn) {
     }
   })
 }
-
-// <td><input type="text" name="<%=item.id%>_product" value="<%=item.product %>"></td>
-// <td><input type="text" name="<%=item.id%>_product_category" value="<%=item.product_category %>"></td>
-// <td><%=item.id %> </td>
-// <td><input type="text" name="<%=item.id%>_qty" value="<%=item.qty %>"></td>
-// <td><input type="text" name="<%=item.id%>_price" value="<%=item.price %>"></td>
-// <td><input type="text" name="<%=item.id%>_vendor" value="<%-item.vendor %>"> </td>
-// <td><input type="text" name="<%=item.id%>_location" value="<%=item.location %>"> </td>
-// <td><button class="edit-btn">Edit</button></td>
