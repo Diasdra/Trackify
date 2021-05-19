@@ -107,11 +107,13 @@ for (let btn of editBtn) {
 // Delete button and alert
 for (let btn of deleteBtn) {
   btn.addEventListener("click", (e) => {
-    let row = e.target.parentNode.parentNode
-    const itemID = row.cells[2].innerHTML,
-          currentURL = `${window.location.href}inventory`
-
-    sendRequest('DELETE', currentURL, { id: itemID })
+    let warning = confirm("This operation will delete the item from the database. This action cannot be undone. Do you wish to continue?")
+    if (warning) {
+      let row = e.target.parentNode.parentNode
+      const itemID = row.cells[2].innerHTML,
+            currentURL = `${window.location.href}inventory`
+      sendRequest('DELETE', currentURL, { id: itemID })
+    }
   })
 }
 
