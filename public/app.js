@@ -2,7 +2,7 @@ const filter = document.querySelector("#filter")
 console.log(filter)
 const tableBody = document.querySelector(".table-body")
 let editBtn = document.querySelectorAll(".edit-btn")
-
+let deleteBtn = document.querySelectorAll(".delete-btn")
 
 // Searching functionality
 filter.addEventListener("keyup", e => {
@@ -21,6 +21,32 @@ filter.addEventListener("keyup", e => {
       
   }
 })
+
+
+const sendRequest = (method, url, data) => {
+  const XHR = new XMLHttpRequest()
+
+    // Success
+    XHR.addEventListener('load', (e) => {
+      console.log("Data submitted successfully")
+    })
+
+    // Error
+    XHR.addEventListener('error', (e) => {
+      console.log("Error submitting data")
+    })
+
+    // This is our request
+    console.log(`Posting to ${url}`)
+    XHR.open(method, url)
+
+    XHR.setRequestHeader('Content-Type', 'application/json');
+
+    // Sending our JSON object
+    console.log(data)
+    XHR.send(JSON.stringify(data))
+}
+
 
 // Edit/Save button
 let editing = false
@@ -48,10 +74,7 @@ for (let btn of editBtn) {
       }
     } else {
       editing = false
-      // Making the post request
-      // Make this into an external function eventually
-      const currentURL = `${window.location.href}inventory`,
-            XHR = new XMLHttpRequest()
+      const currentURL = `${window.location.href}inventory`
 
       let data = {
         id: row.cells[2].innerHTML,
@@ -62,25 +85,8 @@ for (let btn of editBtn) {
         vendor: row.cells[5].querySelector('input').value,
         location: row.cells[6].querySelector('input').value
       }
-      // Success
-      XHR.addEventListener('load', (e) => {
-        console.log("Data submitted successfully")
-      })
 
-      // Error
-      XHR.addEventListener('error', (e) => {
-        console.log("Error submitting data")
-      })
-
-      // This is our request
-      console.log(`Posting to ${currentURL}`)
-      XHR.open('POST', currentURL)
-
-      XHR.setRequestHeader('Content-Type', 'application/json');
-
-      // Sending our JSON object
-      console.log(data)
-      XHR.send(JSON.stringify(data))
+      sendRequest('POST', currentURL, data)
 
       // Iterate through cells in the row
       for (let cell = 0; cell < 8; cell++) {
@@ -95,6 +101,17 @@ for (let btn of editBtn) {
         }
       }
     }
+  })
+}
+
+// Delete button and alert
+for (let btn of deleteBtn) {
+  btn.addEventListener("click", (e) => {
+    let row = e.target.parentNode.parentNode
+    const itemID = row.cells[2].innerHTML,
+          currentURL = `${window.location.href}inventory`
+
+    sendRequest('DELETE', currentURL, { id: itemID })
   })
 }
 
