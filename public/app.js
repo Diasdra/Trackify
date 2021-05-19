@@ -112,6 +112,8 @@ for (let btn of deleteBtn) {
       let row = e.target.parentNode.parentNode
       const itemID = row.cells[2].innerHTML,
             currentURL = `${window.location.href}inventory`
+      console.log('Item deleted.')
+      row.style.display = 'none'
       sendRequest('DELETE', currentURL, { id: itemID })
     }
   })
