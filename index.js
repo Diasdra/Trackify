@@ -52,6 +52,7 @@ app.get('/create', (req, res) => { res.render("create") })
 app.post('/create', inventoryController.create)
 app.get('/inventory', inventoryController.list)
 app.post('/inventory', inventoryController.update)
+app.delete('/inventory', inventoryController.delete)
 
 
 run = app.listen(8000, function () {
