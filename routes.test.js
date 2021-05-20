@@ -56,7 +56,7 @@ it("edits an item with wrong data", async () => {
     expect(response.body).toEqual({"error": "Wrong data entered"})
 })
 
-it("deletes an item", async () => {
+it("deletes an item", async (done) => {
   const response = await request
     .delete("/inventory")
     .send({ id: item1.id })
@@ -64,11 +64,11 @@ it("deletes an item", async () => {
     done()
 })
 
-it("deletes an that doesn't exist", async () => {
+it("deletes an that doesn't exist", async (done) => {
   const response = await request
     .delete("/inventory")
     .send({ id: 1293841287342 })
-    .expect(200)
+    .expect(400)
     done()
 })
 

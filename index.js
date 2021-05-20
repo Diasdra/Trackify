@@ -50,7 +50,7 @@ app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
 app.get('/create', (req, res) => { res.render("create") })
 app.post('/create', inventoryController.create)
-app.get('/inventory', inventoryController.list)
+app.get('/inventory', (req, res) => { res.redirect('/') })
 app.post('/inventory', inventoryController.update)
 app.delete('/inventory', inventoryController.delete)
 

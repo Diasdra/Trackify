@@ -57,12 +57,17 @@ let inventoryController = {
   },
 
   delete: async (req, res) => {
-    await inventoryModel.deleteReminder({
-      id: req.params.id
-    })
-    .then(()=> {
-      res.redirect('/inventory')
-    })
+    console.log(parseInt(req.body.id))
+    try {
+      await inventoryModel.deleteInventory({
+        id: parseInt(req.body.id)
+      })
+      .then(()=> {
+        res.status(200).send({'success': 'deleted from the database'})
+      })
+    } catch (err) {
+      res.status(400).send({"error": "Record not found"})
+    }
   },
 };
 
