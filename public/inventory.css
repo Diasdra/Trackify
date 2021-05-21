@@ -178,5 +178,7 @@ li div a:hover:not(.active) {
 
 .nav-header h1{
     font-size: 20px;
+    margin-left: 1rem;
+    color: var(--header)
 }
 

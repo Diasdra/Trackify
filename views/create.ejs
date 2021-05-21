@@ -1,19 +1,42 @@
-<div class="navbar">
-    <div class="nav-header">
-        <h1>E-Commerce Inventory Tracker</h1>
-    </div>
-    <nav>
+<head>
+    <link rel="stylesheet" href="create.css"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACIT2911 Team 15 Project</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body data-theme="light">
+    <div class="navbar">
         <ul>
-            <li><div class="navigation"><a href="/">Home</a></div></li>
-            <li><div class="navigation"><a href="/">Inventory</a></div></li>
-            <li><div class="navigation"><a href="/create">Add Products</a></div></li>
-            <li><div class="navigation"><a href="/about">About Us</a></div></li>
-            <li><div class="navigation"><a href="/contact">Contact</a></div></li>
-        </ul>          
-    </nav>
-</div>
+            <li>
+                <div class="nav-header">
+                    <h1>E-Commerce Inventory Tracker</h1>
+                </div>
+            </li>
+            <li>
+                <div class="navigation"><a href="/contact">Contact</a></div>
+            </li>
+            <li>
+                <div class="navigation"><a href="/about">About Us</a></div>
+            </li>
+            <li>
+                <div class="navigation"><a href="/create">Add Products</a></div>
+            </li>
+            <li>
+                <div class="navigation"><a href="/">Inventory</a></div>
+            </li>
+            <li>
+                <div class="navigation"><a href="/">Home</a></div>
+            </li>
+        </ul>
+    </div>
 <div class="container">
     <div class="content">
+        <h1>Add a Product</h1>
+
         <form method="POST" action="/create">
             <div class="product">
                 <div class="label">
@@ -71,7 +94,9 @@
                     <input type="text" id="city" name="location" placeholder="location (city)">
                 </div>
             </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="submit">
+                <input class="button" type="submit" class="btn btn-primary" value="Add Item">
+            </div>
     </form>
 </div>
 

@@ -4,14 +4,47 @@ body {
     font-family: 'IBM Plex Serif', sans-serif;
 }
 
+body[data-theme="dark"] {
+    --background: #393552;
+    --background2: #232136;
+    --header: #e0def4;
+    --background3: #575279;
+    --hover: #817c9c;
+    --sub-header: #9ccfd8;
+    --text: #fff;
+    --text2: #000;
+}
+
+body[data-theme="light"] {
+    --background: #D4C8BE;
+    --background2: #af9f8c;
+    --header: #3d362d;
+    --background3: #c7c7bb;
+    --hover: #e3e4e0;
+    --sub-header: #7F867B;
+    --text: #26233a;
+    --text2: #000;
+}
+
+
 input[type=text], select, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #000000;
-    background-color: #e3e4e0;
+    border: 1px solid var(--text);
+    background-color: var(--hover);
     border-radius: 4px;
     resize: vertical;
     width: 50rem;
+}
+
+form {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background3);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 16px;
 }
 
 label {
@@ -20,18 +53,21 @@ label {
 }
 
 input[type=submit] {
-    background-color: #af9f8c;
-    color: white;
-    padding: 10px 10px;
-    cursor: pointer;
-    float: inherit;
-    margin-top: 10px;
-    margin-bottom: 10px;
     border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    margin-top: 10px;
+    color: var(--text);
+    background-color: var(--background2);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
 }
 
 input[type=submit]:hover {
-    background-color: #555;
+    background-color: var(--hover);
+    color: var(--header);
 }
 
 .container {
@@ -46,23 +82,13 @@ input[type=submit]:hover {
 }
 
 h1 {
-    padding-left: 0px;
+    margin-left: 1rem;
+    color: var(--header)
 }
 
 .content {
     grid-area: content;
     padding-left: 0px;
-}
-
-body[data-theme="light"] {
-    --background: #D4C8BE;
-    --background2: #af9f8c;
-    --header: #3d362d;
-    --background3: #c7c7bb;
-    --hover: #e3e4e0;
-    --sub-header: #7F867B;
-    --text: #26233a;
-    --text2: #000;
 }
 
 .navbar ul {
