@@ -1,11 +1,12 @@
 <head>
-    <link rel="stylesheet" href="create.css"/>
+    <link rel="stylesheet" href="create.css" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACIT2911 Team 15 Project</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 <body data-theme="light">
@@ -36,73 +37,74 @@
             </li>
         </ul>
     </div>
-<div class="container">
-    <div class="content">
-        
-        <div class="form">
-            <form method="POST" action="/create">
-                <h1>Add a Product</h1>
-                <div class="product">
-                    <div class="label">
-                        <label for="prod">Product</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="prod" name="product" placeholder="product name">
-                    </div>
-                </div>
-                <div class="productID">
-                    <div class="label">
-                        <label for="prod">Product</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="id" name="id" placeholder="product ID">
-                    </div>
-                </div>
-                <div class="productcategory">
-                    <div class="label">
-                        <label for="product">Product Category</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="product" name="product_category" placeholder="product category">
-                    </div>
-                </div>
-                <div class="quantity">
-                    <div class="label">
-                        <label for="quant">Quantity In Stock</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="quant" name="qty" placeholder="available quantity">
-                    </div>
-                </div>
-                <div class="price">
-                    <div class="label">
-                        <label for="punit">Price Unit</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="punit" name="price" placeholder="price per unit">
-                    </div>
-                </div>
-                <div class="vendor">
-                    <div class="label">
-                        <label for="vend">Vendor</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="vend" name="vendor" placeholder="vendor name">
-                    </div>
-                </div>
-                <div class="location">
-                    <div class="label">
-                        <label for="city">Location</label>
-                    </div>
-                    <div class="text">
-                        <input type="text" id="city" name="location" placeholder="location (city)">
-                    </div>
-                </div>
-                <div class="submit">
-                    <input class="button" type="submit" class="btn btn-primary" value="Add Item">
-                </div>
-            </form>
-        </div>
-        
-</div>
+    <div class="container">
+        <div class="content">
 
+            <div class="form">
+                <form method="POST" action="/create">
+                    <h1>Add a Product</h1>
+                    <div class="product">
+                        <div class="label">
+                            <label for="prod">Product</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="prod" name="product" placeholder="product name">
+                        </div>
+                    </div>
+                    <div class="productID">
+                        <div class="label">
+                            <label for="prod">Product</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="id" name="id" placeholder="product ID">
+                        </div>
+                    </div>
+                    <div class="productcategory">
+                        <div class="label">
+                            <label for="product">Product Category</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="product" name="product_category" placeholder="product category">
+                        </div>
+                    </div>
+                    <div class="quantity">
+                        <div class="label">
+                            <label for="quant">Quantity In Stock</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="quant" name="qty" placeholder="available quantity">
+                        </div>
+                    </div>
+                    <div class="price">
+                        <div class="label">
+                            <label for="punit">Price Unit</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="punit" name="price" placeholder="price per unit">
+                        </div>
+                    </div>
+                    <div class="vendor">
+                        <div class="label">
+                            <label for="vend">Vendor</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="vend" name="vendor" placeholder="vendor name">
+                        </div>
+                    </div>
+                    <div class="location">
+                        <div class="label">
+                            <label for="city">Location</label>
+                        </div>
+                        <div class="text">
+                            <input type="text" id="city" name="location" placeholder="location (city)">
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input class="button" type="submit" class="btn btn-primary" value="Add Item">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src='theme.js'></script>
+</body>

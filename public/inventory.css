@@ -31,7 +31,7 @@ body[data-theme="light"] {
 body {
     background-color: var(--background);
     font-family: 'IBM Plex Serif', sans-serif;
-    color: var(--text)
+    color: var(--text);
 }
 
 *, *:before, *:after {
