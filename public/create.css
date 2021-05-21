@@ -47,6 +47,12 @@ form {
     padding: 16px;
 }
 
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
