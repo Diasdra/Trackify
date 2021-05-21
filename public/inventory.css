@@ -182,3 +182,16 @@ li div a:hover:not(.active) {
     color: var(--header)
 }
 
+.theme-button {
+    border: 0;
+    line-height: 2.5;
+    padding: 9px 15px 8px;
+    text-align: center;
+    color: var(--text);
+    background-color: var(--background2);
+}
+
+.theme-button:hover {
+    background-color: var(--hover);
+}
+
