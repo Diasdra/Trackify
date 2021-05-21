@@ -1,4 +1,4 @@
-const { prisma, app, run } = require('./index')
+const { prisma, app } = require('./index')
 const supertest = require('supertest')
 const request = supertest(app)
 
@@ -8,7 +8,7 @@ beforeAll((done) => {
 
 afterAll(async (done) => {
   await prisma.$disconnect()
-  run.close()
+  //run.close(done)
   done()
 })
 
@@ -32,7 +32,7 @@ const item2 = {
   location: 'Test Location'
 }
 
-it("creates an item", async done => {
+it("creates an item", async (done) => {
   const response = await request
     .post("/create")
     .send(item1)
@@ -40,7 +40,7 @@ it("creates an item", async done => {
     done()
 })
 
-it("edits an item", async done => {
+it("edits an item", async (done) => {
   const response = await request
     .post("/inventory")
     .send(item1)

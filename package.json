@@ -2,7 +2,7 @@
   "name": "reminderlist",
   "version": "1.0.0",
   "main": "index.js",
-  "test": "jest --detectOpenHandles",
+  "test": "npm test -- --forceExit",
   "scripts": {
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio",

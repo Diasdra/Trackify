@@ -55,12 +55,12 @@ app.post('/inventory', inventoryController.update)
 app.delete('/inventory', inventoryController.delete)
 
 
-run = app.listen(8000, function () {
+/* run = app.listen(8000, function () {
         console.log(
           "Server running. Visit: http://localhost:8000 in your browser 🚀"
         );
-      });
+      }); */
 
 module.exports.app = app
-module.exports.run = run
+//module.exports.run = run
 module.exports.prisma = prisma
