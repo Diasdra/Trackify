@@ -1,10 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    background: #fff;
-    color: #fff;
+    background: #000000;
+    color: #000000;
     font-family: 'IBM Plex Serif', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .body {
@@ -17,7 +17,7 @@ body {
     height: auto;
     background-image: url(https://www.unleashedsoftware.com/assets/uploads/2018/09/manufacturing-inventory.jpg);
     background-size: cover;
-    -webkit-filter: blur(5px);
+    -webkit-filter: blur(15px);
     z-index: 0;
 }
 
@@ -46,7 +46,7 @@ body {
     float: left;
     color: #fff;
     font-family: 'IBM Plex Serif', sans-serif;
-    font-size: 35px;
+    font-size: 45px;
     font-weight: 200;
 }
 
@@ -64,7 +64,7 @@ body {
 	z-index: 2;
 }
 
-.login input[type=text]{
+.login input[type=text] {
 	width: 250px;
 	height: 30px;
 	background: transparent;
