@@ -1,0 +1,114 @@
+body {
+    box-sizing: border-box;
+    background-color: var(--background);
+    font-family: 'IBM Plex Serif', sans-serif;
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000000;
+    background-color: #e3e4e0;
+    border-radius: 4px;
+    resize: vertical;
+    width: 50rem;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: #af9f8c;
+    color: white;
+    padding: 10px 10px;
+    cursor: pointer;
+    float: inherit;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+input[type=submit]:hover {
+    background-color: #555;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 5rem 2fr 5rem;
+    grid-template-rows: 20px 1fr;
+    grid-template-columns: 50rem 1fr;
+    grid-template-areas:
+    'content content content';
+    height: auto;
+    width: auto;
+}
+
+h1 {
+    padding-left: 0px;
+}
+
+.content {
+    grid-area: content;
+    padding-left: 0px;
+}
+
+body[data-theme="light"] {
+    --background: #D4C8BE;
+    --background2: #af9f8c;
+    --header: #3d362d;
+    --background3: #c7c7bb;
+    --hover: #e3e4e0;
+    --sub-header: #7F867B;
+    --text: #26233a;
+    --text2: #000;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--background3);
+    position: sticky;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.navbar ul li {
+    float: right;
+    color: var(--header);
+    border-left: 1px solid var(--background2);
+}
+
+.navbar ul li:not(:first-child):hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+    border-right: 1px solid var(--background2);
+}
+
+.navbar ul li:first-child {
+    float: left;
+    border-left: none;
+}
+
+li div a {
+    text-decoration: none;
+    display: block;
+    padding: 16px 16px;
+    float: right;
+    color: var(--header);
+    
+}
+li div a:hover:not(.active) {
+    background-color: var(--hover);
+}
+.active {
+    background-color: var(--sub-header);
+    color: var(--text);
+}
+
+.nav-header h1{
+    font-size: 20px;
+}
