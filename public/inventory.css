@@ -103,7 +103,7 @@ h2 {
     width:35%
 }
 
-.edit-btn {
+.edit-btn, .delete-btn {
 	box-shadow:inset 0px 1px 0px 0px var(--hover);
 	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
 	background-color:#ededed;
@@ -119,11 +119,11 @@ h2 {
 	text-decoration:none;
 	text-shadow:0px 1px 0px var(--hover);
 }
-.edit-btn:hover {
+.edit-btn:hover, .delete-btn:hover{
 	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
 	background-color:#dfdfdf;
 }
-.edit-btn:active {
+.edit-btn:active, .delete-btn:active {
 	position:relative;
 	top:1px;
 }
