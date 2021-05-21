@@ -46,11 +46,7 @@ body {
     float: left;
     color: #fff;
     font-family: 'IBM Plex Serif', sans-serif;
-<<<<<<< HEAD
-    font-size: 60px;
-=======
     font-size: 45px;
->>>>>>> 623d10162edd1702a9793c2f03a0debb335987c3
     font-weight: 200;
 }
 
@@ -72,7 +68,7 @@ body {
 	width: 250px;
 	height: 30px;
 	background: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
+	border: 1px solid rgba(7, 7, 7, 0.6);
 	border-radius: 2px;
 	color: rgb(20, 20, 20);
     font-family: 'IBM Plex Serif', sans-serif;
@@ -86,7 +82,7 @@ body {
 	width: 250px;
 	height: 30px;
 	background: transparent;
-	border: 1px solid rgba(255,255,255,0.6);
+	border: 1px solid rgba(7, 7, 7, 0.6);
 	border-radius: 2px;
 	color: black;
     font-family: 'IBM Plex Serif', sans-serif;
