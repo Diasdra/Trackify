@@ -46,6 +46,7 @@ app.set("view engine", "ejs");
 
 // Routes start here
 app.get('/' , inventoryController.list)
+app.get('/login' , (req, res) => { res.render("login") })
 app.get('/about', (req, res) => { res.render("about") })
 app.get('/contact', (req, res) => { res.render("contact") })
 app.get('/create', (req, res) => { res.render("create") })
