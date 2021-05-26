@@ -47,17 +47,6 @@
                     <input type="text" id="filter">
                 </div>
                 <!-- Not Implemented -->
-                <!-- <div class="order">
-                    <label for="sort">Order By:</label>
-                    <select name="order" id="order">
-                        <option value="alphabetical">Alphabetical</option>
-                        <option value="priceHigh">Price: High->Low</option>
-                        <option value="priceLow">Price: Low->High</option>
-                        <option value="quantityHigh">Quantity: High->Low</option>
-                        <option value="quantityLow">Quantity: Low->High</option>
-                    </select>
-                </div> -->
-                
                 <!-- <div class="sort">
                     
                     <label for="priceRange">Price Range:</label>
@@ -93,13 +82,13 @@
             <table class="">
                 <thead>
                     <tr>
-                        <th>Product</th>
-                        <th>Product Category</th>
-                        <th>Product ID</th>
-                        <th>Quantity In Stock</th>
-                        <th>Price Unit</th>
-                        <th>Vendor</th>
-                        <th>Location</th>
+                        <th onclick="sortTable(0)">Product</th>
+                        <th onclick="sortTable(1)">Product Category</th>
+                        <th onclick="sortTableNumber(2)">Product ID</th>
+                        <th onclick="sortTableNumber(3)">Quantity In Stock</th>
+                        <th onclick="sortTableNumber(4)">Price Unit</th>
+                        <th onclick="sortTable(5)">Vendor</th>
+                        <th onclick="sortTable(6)">Location</th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -126,4 +115,5 @@
     </div>
     <script src='app.js'></script>
     <script src='theme.js'></script>
+    <script src='sort.js'></script>
 </body>

@@ -52,6 +52,7 @@ th {
     padding-right: 3rem;
     background-color: var(--sub-header);
     text-align: center;
+    cursor: pointer;
 }
 
 tr {
