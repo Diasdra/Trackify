@@ -1,0 +1,17 @@
+[Unit]
+Description=Trackify Application
+After=cloud-final.service
+
+[Service]
+WorkingDirectory=/home/ec2-user/Tracikfy
+ExecStart=/usr/bin/node /home/ec2-user/Trackify/index.js
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=Trackify
+User=ec2-user
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=cloud-init.target
