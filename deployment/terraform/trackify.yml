@@ -1,0 +1,10 @@
+#cloud-config
+write_files:
+  - path: /home/ec2-user/.env
+    owner: ec2-user:ec2-user
+    permissions: "0644"
+    content: |
+      DATABASE_URL="${db_url}"
+runcmd:
+  - [ yarn, prisma, generate ]
+  - [ systemctl, restart, --no-block, trackify.service ]
