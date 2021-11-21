@@ -46,6 +46,7 @@ resource "aws_subnet" "private2" {
 resource "aws_subnet" "public" {
   vpc_id     = aws_vpc.main.id
   cidr_block = "10.152.3.0/24"
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "Public Subnet"
@@ -59,6 +60,22 @@ resource "aws_internet_gateway" "gw" {
     Name = "Trackify Internet Connection"
   }
 }
+
+resource "aws_route_table" "public_route_table" {
+  vpc_id = aws_vpc.main.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+
+    gateway_id = aws_internet_gateway.gw.id
+  }
+}
+
+resource "aws_route_table_association" "public_route_association" {
+  subnet_id = aws_subnet.public.id
+  route_table_id = aws_route_table.public_route_table.id
+}
+
 // resource "aws_route_table" "internetConnect" {
 //   vpc_id = aws_vpc.main.id
 
@@ -178,7 +195,7 @@ resource "aws_instance" "trackify_app" {
   instance_type = "t2.micro"
   ami           = data.aws_ami.trackify_ami.id
   subnet_id     = aws_subnet.public.id
-  key_name      = "Default-Dev-Key"
+  key_name      = var.ssh_key
 
   vpc_security_group_ids      = [aws_security_group.applicationGroup.id]
   associate_public_ip_address = true
