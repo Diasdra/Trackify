@@ -10,3 +10,7 @@
 // output "app_address_2" {
 //   value = aws_instance.trackify_app[2].public_ip
 // }
+
+output "lb_address" {
+  value = module.trackify_lb.dns_name
+}

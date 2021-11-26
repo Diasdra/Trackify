@@ -5,10 +5,10 @@ data "cloudinit_config" "server_config" {
   part {
     content_type = "text/cloud-config"
     content = templatefile("${path.module}/trackify.yml", {
-      db_user: aws_db_instance.mysql.username
-      db_pass: var.database_admin_password
-      db_url : aws_db_instance.mysql.endpoint
-      db_name: aws_db_instance.mysql.name
+      db_user: var.DBUsername
+      db_pass: var.DBPassword
+      db_url : var.DBEndpoint
+      db_name: var.DBName
     })
   }
 }

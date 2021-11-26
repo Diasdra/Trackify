@@ -9,5 +9,5 @@ variable "database_admin_password" {
 
 variable "ssh_key" {
   description = "SSH key for connecting through ssh"
-  type = string
+  type        = string
 }
