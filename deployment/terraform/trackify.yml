@@ -4,7 +4,8 @@ write_files:
     owner: ec2-user:ec2-user
     permissions: "0644"
     content: |
-      DATABASE_URL="${db_url}"
+      DATABASE_URL="mysql://${db_user}:${db_pass}@${db_url}/${db_name}"
 runcmd:
+  - [ npx, prisma, migrate, deploy]
   - [ yarn, prisma, generate ]
   - [ systemctl, restart, --no-block, trackify.service ]

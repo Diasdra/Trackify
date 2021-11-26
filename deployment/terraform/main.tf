@@ -130,7 +130,10 @@ data "cloudinit_config" "server_config" {
   part {
     content_type = "text/cloud-config"
     content = templatefile("${path.module}/trackify.yml", {
-      db_url : aws_db_instance.mysql.address
+      db_user: aws_db_instance.mysql.username
+      db_pass: var.database_admin_password
+      db_url : aws_db_instance.mysql.endpoint
+      db_name: aws_db_instance.mysql.name
     })
   }
 }
@@ -178,7 +181,6 @@ resource "aws_instance" "trackify_app" {
   instance_type = "t2.micro"
   ami           = data.aws_ami.trackify_ami.id
   subnet_id     = aws_subnet.public.id
-  key_name      = "Default-Dev-Key"
 
   vpc_security_group_ids      = [aws_security_group.applicationGroup.id]
   associate_public_ip_address = true
