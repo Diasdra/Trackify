@@ -27,7 +27,7 @@ resource "aws_instance" "trackify_app" {
   key_name      = var.ssh_key
 
   vpc_security_group_ids      = [var.private_sg]
-  associate_public_ip_address = false
+  associate_public_ip_address = true
 
   user_data = data.cloudinit_config.server_config.rendered
 }

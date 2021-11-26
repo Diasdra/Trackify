@@ -40,12 +40,12 @@ module "trackify_db" {
 module "trackify_ec2" {
   source = "./modules/ec2"
 
-  private_subnet_1 = module.trackify_vpc.private_subnet_1
+  private_subnet_1 = module.trackify_vpc.public_subnets[0]
   ssh_key          = var.ssh_key
   private_sg       = module.trackify_vpc.private_sg
   DBEndpoint       = module.trackify_db.DBEndpoint
-  DBUsername       = var.database_admin_password
-  DBPassword       = module.trackify_db.DBUsername
+  DBPassword       = var.database_admin_password
+  DBUsername       = module.trackify_db.DBUsername
   DBName           = module.trackify_db.DBName
 }
 

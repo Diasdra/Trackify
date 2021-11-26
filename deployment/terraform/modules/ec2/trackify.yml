@@ -7,5 +7,5 @@ write_files:
       DATABASE_URL="mysql://${db_user}:${db_pass}@${db_url}/${db_name}"
 runcmd:
   - [ npx, prisma, migrate, deploy]
-  - [ yarn, prisma, generate ]
+  - [ npx, prisma, generate ]
   - [ systemctl, restart, --no-block, trackify.service ]
