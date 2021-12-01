@@ -6,6 +6,7 @@ write_files:
     content: |
       DATABASE_URL="mysql://${db_user}:${db_pass}@${db_url}/${db_name}"
 runcmd:
+  - [ cd, /home/ec2-user]
   - [ npx, prisma, migrate, deploy]
   - [ npx, prisma, generate ]
   - [ systemctl, restart, --no-block, trackify.service ]

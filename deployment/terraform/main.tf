@@ -49,11 +49,11 @@ module "trackify_ec2" {
   DBName           = module.trackify_db.DBName
 }
 
-module "trackify_lb" {
-  source = "./modules/lb"
+// module "trackify_lb" {
+//   source = "./modules/lb"
 
-  vpc_public_sg_id   = module.trackify_vpc.public_sg
-  vpc_public_subnets = module.trackify_vpc.public_subnets
-  vpc_id             = module.trackify_vpc.vpc_id
-  instance_ids       = module.trackify_ec2.instance_ids
-}
+//   vpc_public_sg_id   = module.trackify_vpc.public_sg
+//   vpc_public_subnets = module.trackify_vpc.public_subnets
+//   vpc_id             = module.trackify_vpc.vpc_id
+//   instance_ids       = module.trackify_ec2.instance_ids
+// }
